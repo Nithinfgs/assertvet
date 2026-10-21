@@ -1,0 +1,53 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "assertvet"
+version = "0.1.0"
+description = "Audit git diffs for deleted assertions, softened checks, and skipped tests introduced by AI coding agents. Zero dependencies."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [
+    { name = "Nithin Selvaraj", email = "nithinselvaraj9@gmail.com" }
+]
+keywords = [
+    "ai-agent",
+    "coding-agents",
+    "git-diff",
+    "test-integrity",
+    "claude-code",
+    "cursor",
+    "pytest",
+    "vitest",
+    "jest",
+    "code-review",
+    "security-audit"
+]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Environment :: Console",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Programming Language :: Python :: 3.14",
+    "Topic :: Software Development :: Quality Assurance",
+    "Topic :: Software Development :: Testing",
+]
+
+[project.urls]
+Homepage = "https://github.com/Nithinfgs/assertvet"
+Repository = "https://github.com/Nithinfgs/assertvet"
+Issues = "https://github.com/Nithinfgs/assertvet/issues"
+
+[project.scripts]
+assertvet = "assertvet.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["assertvet*"]

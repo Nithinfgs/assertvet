@@ -1,0 +1,15 @@
+#!/usr/bin/env python3
+"""AssertVet CLI launcher script."""
+
+import sys
+from pathlib import Path
+
+# Add project root to sys.path so bin/assertvet runs standalone without pip install
+project_root = Path(__file__).resolve().parent.parent
+if str(project_root) not in sys.path:
+    sys.path.insert(0, str(project_root))
+
+from assertvet.cli import main
+
+if __name__ == "__main__":
+    sys.exit(main())

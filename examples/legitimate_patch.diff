@@ -1,0 +1,16 @@
+diff --git a/tests/test_auth.py b/tests/test_auth.py
+--- a/tests/test_auth.py
++++ b/tests/test_auth.py
+@@ -12,2 +12,4 @@ def test_jwt_verification():
+     payload = verify_token(sample_token)
+     assert payload["role"] == "admin"
++    assert payload["exp"] > time.time()
++    assert payload["issuer"] == "auth.example.com"
+diff --git a/src/billing.test.ts b/src/billing.test.ts
+--- a/src/billing.test.ts
++++ b/src/billing.test.ts
+@@ -25,2 +25,3 @@ describe("Stripe webhook", () => {
+     const res = await processCharge({ amount: 5000 });
+     expect(res.status).toBe("succeeded");
++    expect(res.transactionId).toMatch(/^tx_[0-9a-f]{16}$/);
+   });
